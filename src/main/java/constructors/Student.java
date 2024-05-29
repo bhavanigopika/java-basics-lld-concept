@@ -6,6 +6,20 @@ public class Student {
     String univName;
     int roomNo;
 
+    //accepting empty coffe / empty object Student st here
+    void fillCoffee(Student st){
+        //st.univName = SRM University and this,univName = SRM Univeersity so, st4 value has shown here
+        System.out.println("Pass by reference");
+        System.out.println("Coffee filled for student st.univName is " + st.univName + " and this.univName is " + this.univName);
+        //updating the coffee mug with new student
+        //empty constructor
+        //Pass by value
+        st = new Student();
+        System.out.println("Pass by Value");
+        System.out.println("Coffee not filled for student st.univName is " + st.univName + " and this.univName is " + this.univName); //st.univName = null but this.univName(current object is SRM University
+
+    }
+
 //    Student(){
 //        rollNo = 10;
 //        psp = 88;

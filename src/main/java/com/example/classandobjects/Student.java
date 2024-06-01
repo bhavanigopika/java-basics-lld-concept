@@ -18,7 +18,6 @@ public class Student {
     //if some student want to change the batch.
     //So, I will ask the new batch_id -> change_batch(int new_batch_id)
     //change the new_batch_id to previous batch_id as batch_id = new_batch_id
-
     void change_batch(int new_batch_id){
         batch_id = new_batch_id;
     }

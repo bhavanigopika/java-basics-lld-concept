@@ -35,7 +35,14 @@ public class Client {
         Student st4Copy = new Student(st4);
 
         // we get the diff objct reference id for univName and univName is changed to only st4Copy not in st4.
+        st4Copy.rollNo = 3;
         st4Copy.univName = "Anna University";
+
+        Student s5 = new Student();
+        s5.rollNo=20;
+        s5.univName="Anna University";
+        s5.psp = 90;
+        s5.roomNo = 181;
 
         // we get the same univName both in st4 and st4Cpopy but string is immutable but we can use StringBuilder.
         //StringBuilder sb = new StringBuilder(st4Copy.univName = "Anna");

@@ -7,8 +7,6 @@ public class B extends A{
         System.out.println("Constructor of B is called");
 
     }
-
-
     B(int x, int y){
         System.out.println("Constructor of B is called " + x + " " + y);
     }

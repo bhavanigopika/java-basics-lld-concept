@@ -7,4 +7,8 @@ public class B extends A{
         //super.doSomething(x);
         System.out.println("Inside B");
     }
+    //Think this:
+    //run time polymorphism -> This is achieved through method overriding
+
+    //method overloading - same method name, same parameter, same return type.
 }

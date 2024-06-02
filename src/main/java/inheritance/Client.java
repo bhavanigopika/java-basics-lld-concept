@@ -23,7 +23,7 @@ public class Client {
 
         D d = new D();
         d.x = 80; //it appears because,  I have initialzed x is variable in C class since D is the child of C...x variable accepts here.
-        d.understandConcepts("hjhk");
+        d.understandConcepts("welcome");
         d.understandConcepts();
 
 

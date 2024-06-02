@@ -5,8 +5,11 @@ public class Student {
     String name;
     String univName;
 
+    //Think this:
     //compiler time polymorphism -> This is achieved through method overloading, operator overloading
+
     //method overloading - Below is method overloading, this means same method name, different parameter, don't worry of return type.
+
     void doSomething(int x){
 
     }

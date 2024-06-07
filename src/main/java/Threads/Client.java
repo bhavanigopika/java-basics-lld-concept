@@ -3,14 +3,14 @@ package Threads;
 //When I run this method, is my CPU execute the client class piece of code? Yes
 public class Client {
     static void doSomething() {
-        System.out.println("Printing something in thread: " + Thread.currentThread().getName());
+        System.out.println("Printing something in thread and current thread name: " + Thread.currentThread().getName());
         //doSmething execute in which thread: main
         //And we didn't create any external thread here.
     }
     public static void main(String[] args) {
 
         System.out.println("Current thread name: " + Thread.currentThread().getName());
-        //doSomething(); //since it is static, I didn't create any object
+        doSomething(); //since it is static, I didn't create any object
 
         //Now, I don't want to print a thread as a main thread and I want to give a task
         //to a different thread rather than my main thread

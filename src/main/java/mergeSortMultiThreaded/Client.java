@@ -17,7 +17,7 @@ public class Client {
         Sorter t = new Sorter(ls, ex);
         //submit the task to executor service
         Future<List<Integer>> res = ex.submit(t);
-        //get the futrue list of integer
+        //get the futrue list of integer and add exeception also.
         ls = res.get();
         System.out.println(ls);
     }

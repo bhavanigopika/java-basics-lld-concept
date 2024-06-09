@@ -1,4 +1,4 @@
-package adderSubtractorSyncMethods;
+package addersubtractorusingSynchronizedMethods;
 
 public class Count {
     long value = 0;
@@ -7,6 +7,6 @@ public class Count {
         value = value + x;
    }
    public synchronized void decreamentByX(int x){
-        value = value -x;
+        value = value - x;
    }
 }

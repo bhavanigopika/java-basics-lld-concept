@@ -1,4 +1,4 @@
-package adderSubtractorSyncMethods;
+package addersubtractorusingSynchronizedMethods;
 
 import java.util.concurrent.Callable;
 

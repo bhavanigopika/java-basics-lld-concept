@@ -1,4 +1,4 @@
-package addersubtractor;
+package adderSubtractorSyncMethods;
 
 import java.util.concurrent.Callable;
 
@@ -18,7 +18,11 @@ public class Adder implements Callable<Void> {
         for(int i = 1; i <= 100; i++){
             //add the values to count
             //in count. java, we have declared value = 0...so  count.value = 0 initially
-            count.value = count.value + i;
+            //this is critical section count.value += i; -> adding the value to count
+            //count.value = count.value + i;
+
+            count.increamentByX(i);
+
         }
         return null;
     }

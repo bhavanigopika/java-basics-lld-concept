@@ -7,13 +7,15 @@ import java.util.List;
 public class Store {
     //cloth store or store have shelf and item to keep on shelf.
     private int maxSize; //no. of shelf in the store --> 1 item we can keep in 1 shelf here...maxSize is fixed
-    //private List<Integer> list;
+    //private ArrayList<Integer> items;
     private List<Object> items; //list of items --> store have list of item
 
     Store(int maxSize) {
         this.maxSize = maxSize;
         //whoever create a store, will pass the items
+        //ArrayList<Object> al = new ArrayList<>(); or List<Object> al = new ArrayList<>();
         this.items = new ArrayList<>();
+
     }
     public int getMaxSize() {
         return maxSize;

@@ -2,6 +2,7 @@ package producerconsumer;
 
 public class Consumer implements Runnable {
     private Store store;
+
     Consumer(Store st) {
         this.store = st;
     }
@@ -13,7 +14,7 @@ public class Consumer implements Runnable {
 
             //e.g.,
             //100 threads/producers are here, current size is 10 and maxSize is 80
-            //10 consumers are here and current size is 5...so I can add 5 5 consumers at the time
+            //10 consumers are here and current size is 5...so I can add 5 consumers at the time
             //but because of synchronized, I can consume 1 item at the time...so, problem-consumer pblm where semphore will come into picture
             //Semaphore - multiple threads enter into critical section...still no sync issues has happened. see other package with example
 

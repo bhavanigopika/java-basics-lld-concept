@@ -2,6 +2,7 @@ package producerconsumer;
 
 public class Producer implements Runnable {
     private Store store;
+
     Producer(Store st){
         this.store = st;
     }

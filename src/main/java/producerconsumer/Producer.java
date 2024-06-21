@@ -9,6 +9,7 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
+        //Thread.currentThread().setName("Producer");
         while(true) {
             //Here, sync issues  happened, what section of code happened? Critical Section
             //entire if condition is critical...apply synchronized here

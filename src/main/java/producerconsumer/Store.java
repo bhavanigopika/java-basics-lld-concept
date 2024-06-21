@@ -26,22 +26,24 @@ public class Store {
     }
 
     public void addItem() {
-        System.out.println("Producer production time, current size is: " + this.items.size());
+        System.out.println("Producer production time, current size before production time is: " + this.items.size());
         //System.out.println("add item: " + Thread.currentThread().getName());
         //producer adding item to the store
-        this.items.add(new Object());
+        this.items.add(new Object());// 1 producer will be allowed to add 1 item(1 shelf = 1 item)
+        System.out.println("Producer production time, current size after production time is: " + this.items.size());
     }
 
     public void removeItem() {
         //3 threads are running the remove() method at the same time
         //but the actual list of size is 2(only 2 items are present to consume) --> [2,3]
         //first thread will remove 3, second thread will remove 2, last thread will remove what index? -1(because size is 0 and (this.item.size() -1) -> -1)
-        System.out.println("Consumer consuming time, current size is: "  + this.items.size());
+        System.out.println("Consumer consuming time, current size before consumption time is: "  + this.items.size());
         //System.out.println("remove item: " + Thread.currentThread().getName());
 
         //consumer removing item on the store.
         //let us remove 1(last) item here.
         this.items.remove(this.items.size() - 1);
+        System.out.println("Consumer consuming time, current size after consumption time is: "  + this.items.size());
     }
 
 }

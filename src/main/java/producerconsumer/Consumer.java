@@ -8,6 +8,7 @@ public class Consumer implements Runnable {
     }
     @Override
     public void run() {
+        //Thread.currentThread().setName("Consumer");
         while(true) {
             //Here, sync issues  happened, what section of code happened? Critical Section
             //entire if condition is critical

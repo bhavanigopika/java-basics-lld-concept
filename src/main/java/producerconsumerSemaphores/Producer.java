@@ -35,6 +35,10 @@ public class Producer implements Runnable {
             store.addItem();
             consSemaphore.release();
 
+            //prodSemaphore.acquire();
+            //store.addItem();
+            //consSemaphore.release();
+
         }
     }
 }

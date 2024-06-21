@@ -18,21 +18,23 @@ public class Client {
 
         //created 8 producer/threads at a time....multiple threads occurring here
         for(int i = 1; i <= 8; i++){
-            //Producer t = new Producer(st, prodSemaphore, consSemaphore);
+            Producer task = new Producer(st, prodSemaphore, consSemaphore);
             //executor will create a thread for us. We execute the runnable command
-            //ex.execute(t);
+            ex.execute(task);
 
-            ex.execute(new Producer(st, prodSemaphore, consSemaphore));
+            //or
+            //ex.execute(new Producer(st, prodSemaphore, consSemaphore));
         }
 
         //created 20 consumer/threads at a time....multiple threads occurring here
         for(int i = 1; i <= 20; i++){
 
-            //Consumer t = new Consumer(st, prodSemaphore, consSemaphore);
+            Consumer task = new Consumer(st, prodSemaphore, consSemaphore);
             //executor will create a thread for us. We execute the runnable command
-            //ex.execute(t);
+            ex.execute(task);
 
-            ex.execute(new Consumer(st, prodSemaphore, consSemaphore));
+            //or
+            //ex.execute(new Consumer(st, prodSemaphore, consSemaphore));
         }
 
 

@@ -30,6 +30,10 @@ public class Consumer implements Runnable {
             }
             store.removeItem();
             prodSemaphore.release();
+
+//            consSemaphore.acquire();
+//            store.removeItem();
+//            prodSemaphore.release();
         }
     }
 }

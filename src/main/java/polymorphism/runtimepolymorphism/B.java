@@ -10,5 +10,5 @@ public class B extends A{
     //Think this:
     //run time polymorphism -> This is achieved through method overriding
 
-    //method overloading - same method name, same parameter, same return type.
+    //method overriding - same method name, same parameter, same return type as declared in the parent class
 }

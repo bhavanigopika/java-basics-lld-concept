@@ -1,6 +1,10 @@
 package generics;
 
+import polymorphism.runtimepolymorphism.A;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Client {
     public static void main(String[] args) {
@@ -85,6 +89,54 @@ public class Client {
         //To wrap string by integer
         p13.<Integer>doSomethingForLearning(Integer.valueOf("Myself"));
 
+        /*
+        Inheritance and Generics
+         */
+
+        //call here
+        Utils.simpleDoSomething(new Animal());//accept animal definitely
+        Utils.simpleDoSomething(new Dog());//dog, cat...since it is a child of animal and animal can hold the value of its children types
+        Utils.simpleDoSomething(new Cat());//dog, cat...since it is a child of animal and also accept object of cat.
+
+        //can we pass list of dog, list of cat here
+        List<Dog> dogs = new ArrayList<>();
+        //add some dogs in this list
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+
+        //we have list of cat
+        List<Cat> cats = new ArrayList<>();
+        //add some cats in this list
+        cats.add(new Cat());
+        cats.add(new Cat());
+        cats.add(new Cat());
+        cats.add(new Cat());
+
+        //can we pass list of dogs in doSomething method
+//        Utils.doSomething(dogs);
+//        Utils.doSomething(cats);
+        /*
+        we cannot store List<Dog> or List<Cat> in List<Animal> -> Not allowed
+        But we can store only Dog or only cat in Animal, not list of dog List<Dog>, not list of cat List<Cat>
+         */
+
+        //list of animals are allowed
+        List<Animal> animals = new ArrayList<>();
+        Utils.doSomething(animals);
+
+        Utils.doSomething(dogs);
+        Utils.doSomething(cats);
+
+        //name attribute copied to this children class that is dog and cat.
+        Utils.printAnimalNames(animals);
+        Utils.printAnimalNames(dogs);
+        Utils.printAnimalNames(cats);
+
+        //we can pass List<Dog> in doSomething2? YES
+        Utils.doSomething2(animals);
+        Utils.doSomething2(dogs);
+        Utils.doSomething2(cats);
 
     }
 }

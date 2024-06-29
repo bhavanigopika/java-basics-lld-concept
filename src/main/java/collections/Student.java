@@ -12,6 +12,7 @@ public class Student implements Comparable<Student>{
 
     /*
     comparable interface is to define the natural ordering of user defined classes.
+    //The following code here is natural ordering bec we implement Student class via comparable.
      */
     @Override
     public int compareTo(Student o) {

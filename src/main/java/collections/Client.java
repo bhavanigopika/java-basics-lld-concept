@@ -167,7 +167,7 @@ public class Client {
         /*
         Done with List, Set, Queue Interfaces
         */
-
+        System.out.println("********************");
         /*
         Comparable and Comparator Interface - These two interfaces are in collection interface
          */
@@ -189,6 +189,8 @@ public class Client {
         });
         System.out.println(ls1);//sam, raj, moon, krish, jack
 
+        System.out.println("********************");
+
         //bring out the list with our own object Student
         List<Student> ls5 = new ArrayList<Student>();
         //since it is a student type...write it as
@@ -207,7 +209,8 @@ public class Client {
         //Collections of student, so iterate
         for(Student s:ls5){
             System.out.println(s);//gives object reference
-            System.out.println(s.name + " " + s.psp + " " + s.univName);//sorted as per the psp first, if same psp, then sorted via name
+            //sorted as per the psp first, if same psp, then sorted via name that we give in Student class (Students implements Comparable) -> This was natural ordering...
+            System.out.println(s.name + " " + s.psp + " " + s.univName);
 
         }
 

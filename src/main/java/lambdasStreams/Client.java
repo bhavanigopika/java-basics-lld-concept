@@ -3,10 +3,14 @@ package lambdasStreams;
 import com.fasterxml.jackson.core.JsonToken;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -98,7 +102,7 @@ public class Client {
 
         MathematicalOperation subtractionOperation = (int a, int b) -> {return a - b;};
         MathematicalOperation multiplicationOperation = (int a, int b) ->  a * b;
-        MathematicalOperation divisionOperation = (int a, int b) -> {return a / b;};
+        MathematicalOperation divisionOperation = (a,b) -> {return a / b;};
         MathematicalOperation moduloOperation = (int a, int b) -> {return a % b;};
 
         //we can do as many mathematical operation we want using lambda expression if we have two inputs
@@ -325,6 +329,29 @@ public class Client {
       Does the order of applying the stream methods matter? YES. The order will definitely affect the performance because the output of current stream method will become input of the next method
       .sorted depend on .map and .map depend on filter…
        */
+
+        System.out.println("****Assignment problem*****");
+
+        List<String> words = Arrays.asList("apple", "banana", "orange", "grape", "kiwi");
+
+        // What does the following code snippet do?
+        boolean allMatch = words.parallelStream()
+                .allMatch(w -> w.length() > 3);
+
+        System.out.println("All match: " + allMatch);
+
+        System.out.println("*********");
+
+        IntFunction<Integer> square = x -> x * x;
+        System.out.println(square.apply(5)); // Output: ?
+
+
+        BinaryOperator<Integer> addition = (x, y) -> x + y;
+        System.out.println(addition.apply(10, 20)); // Output: ?
+
+
+        Function<Integer, Integer> increment = x -> x + 1;
+        System.out.println(increment.apply(7)); // Output: ?
 
     }
 }

@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 public class Dog implements Animal {
     String name;

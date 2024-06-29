@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 //interface can extend multiple interfaces
 public interface Species extends Animal,Bird {

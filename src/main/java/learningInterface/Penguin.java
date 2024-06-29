@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 
 public class Penguin implements Animal,Bird {

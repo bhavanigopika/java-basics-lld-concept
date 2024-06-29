@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 public class Client {
     public static void main(String[] args) {

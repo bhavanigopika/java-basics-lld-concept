@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 public interface Animal {
     public void produceSound();

@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 public interface Bird {
     public void fly();

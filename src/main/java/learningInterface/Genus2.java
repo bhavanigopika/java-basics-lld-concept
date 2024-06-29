@@ -1,4 +1,4 @@
-package Learninginterface;
+package learningInterface;
 
 public interface Genus2 extends Bird {
     public void fly();

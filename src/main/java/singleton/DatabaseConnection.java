@@ -10,6 +10,42 @@ public class DatabaseConnection {
     String userName;
     String password;
 
+    public static void setInstance(DatabaseConnection instance) {
+        DatabaseConnection.instance = instance;
+    }
+
+    public Lock getLock() {
+        return lock;
+    }
+
+    public void setLock(Lock lock) {
+        this.lock = lock;
+    }
+
+    public String getDbUrl() {
+        return dbUrl;
+    }
+
+    public void setDbUrl(String dbUrl) {
+        this.dbUrl = dbUrl;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     //using synchronized keyword
     public static DatabaseConnection getInstance() {
         //Double check locking

@@ -137,6 +137,7 @@ public class Student {
             if(this.psp < 85){
                 throw new RuntimeException("psp is less than 85. Provide psp greater than 85");
             }
+
             return new Student(this);//return new student and pass this(builder) object -> this represent current object(i.e) builder object
         }
     }

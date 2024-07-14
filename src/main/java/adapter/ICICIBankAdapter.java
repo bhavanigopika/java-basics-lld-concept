@@ -2,7 +2,7 @@ package adapter;
 
 import adapter.thirParty.icicibank.ICICIBank;
 
-public class ICICIAdapter implements BankAPI {
+public class ICICIBankAdapter implements BankAPI {
 
     private ICICIBank icicibank = new ICICIBank();
 

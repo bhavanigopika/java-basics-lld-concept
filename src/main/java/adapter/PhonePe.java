@@ -4,7 +4,7 @@ public class PhonePe {
     //We should use dependency injection here
     //phonepe using the bankAPI interface
     //currently phonepe using icici third party system
-    private static BankAPI bankAPI = new ICICIAdapter();
+    private static BankAPI bankAPI = new ICICIBankAdapter();
     private static BankAPI bankAPI2 = new YesBankAdapter();
 
     public static void main(String[] args) {

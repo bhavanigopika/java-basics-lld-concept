@@ -10,7 +10,7 @@ public class VanillaScoop implements IceCreamConeConstituents{
     @Override
     public String getDescription() {
         //ofcourse these toppings will not be null and this is non-base entity...already base entity will be there
-        //so we cannot say thee object will be null...so you directly return the stmt
+        //so we cannot say these object will be null...so you directly return the stmt
         return iceCreamConeConstituents.getDescription() + " + Vanilla Scoop";
     }
 

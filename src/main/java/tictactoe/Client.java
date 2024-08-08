@@ -2,7 +2,10 @@ package tictactoe;
 
 import tictactoe.controllers.GameController;
 import tictactoe.exceptions.InvalidBotCountException;
+import tictactoe.exceptions.InvalidMoveException;
 import tictactoe.exceptions.InvalidPlayerCountException;
+import tictactoe.models.Bot;
+import tictactoe.models.BotDifficultyLevel;
 import tictactoe.models.Game;
 import tictactoe.models.GameState;
 import tictactoe.models.Player;
@@ -17,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-    public static void main(String[] args) throws InvalidBotCountException, InvalidPlayerCountException {
+    public static void main(String[] args) throws InvalidBotCountException, InvalidPlayerCountException, InvalidMoveException {
         //Player p1 = new Player("Krish", 'X', PlayerType.HUMAN);
         //Player p1 = new Player("Krish", new Symbol('X'), PlayerType.HUMAN);
 
@@ -49,10 +52,16 @@ public class Client {
 
         //dimension
         int dimension = 3;
+
         //player
         List<Player> playerList = new ArrayList<>();
         playerList.add(new Player("Krish", new Symbol('X'), PlayerType.HUMAN));
-        playerList.add(new Player("Vidhu", new Symbol('O'), PlayerType.HUMAN));
+        //playerList.add(new Player("Vidhu", new Symbol('O'), PlayerType.HUMAN));
+        /*we know that playerType is Bot already and  add the difficultylevel only
+        no 2 bots are not allowed*/
+        playerList.add(new Bot("SuperBot", new Symbol('O'), BotDifficultyLevel.EASY));
+        //playerList.add(new Bot("intelligentBot", new Symbol('X'), BotDifficultyLevel.EASY));
+
         //winningStrategy
         List<WinningStrategy> winningStrategyList = new ArrayList<>();
         winningStrategyList.add(new RowWinningStrategy());
@@ -64,15 +73,15 @@ public class Client {
         Game game = gameController.startGame(dimension, playerList, winningStrategyList);
 
         //say, someone asking I want to print the board, Initially, it was empty
-        gameController.printBoard(game);
+        //gameController.printBoard(game);//I already mentioned in line no:80, I comment this line
         /*
-        Now, game will be start...so, game state is IN_PROGRESS - keep playing games
+        Now, game will start...so, game state is IN_PROGRESS - keep playing games
         When you compare object...you use .equals not as ==
         if the GameState is ENDED or DRAW...game will stop
         */
         while(game.getGameState().equals(GameState.IN_PROGRESS)){
             /*
-            1. Before player makes the move, player have to see the board
+            1. Before player makes the move, player have to see the current status of board
             So, everytime print the board and make the move
             2. Ask the user to choose where to make the move
              */
@@ -89,8 +98,5 @@ public class Client {
         }else{
             System.out.println("Game is drawn");
         }
-
-
-
     }
 }

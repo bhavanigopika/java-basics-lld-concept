@@ -36,9 +36,9 @@ public class Board {
              //Every row you are going to each cell
              for(Cell cell : row){
                  if(cell.getCellState() == CellState.EMPTY){
-                     System.out.print("| |");
+                     System.out.print("|  |");
                  }else{
-                     System.out.println("| " + cell.getPlayer().getSymbol());//corresponding player symbol
+                     System.out.print("| " + cell.getPlayer().getSymbol().getaChar() + " |");//corresponding player symbol
                  }
              }
              System.out.println();

@@ -1,5 +1,6 @@
 package tictactoe.models;
 
+import tictactoe.factory.BotPlayingStrategyFactory;
 import tictactoe.strategies.botwinningstrategies.BotWinningStrategy;
 
 public class Bot extends Player{
@@ -13,10 +14,11 @@ public class Bot extends Player{
     (i.e)
     Bot bot = new Bot(name, symbol, botDifficultyLevel, botPlayingStrategy);
      */
-    public Bot(String name, Symbol symbol, BotDifficultyLevel botDifficultyLevel, BotWinningStrategy botPlayingStrategy){
+    public Bot(String name, Symbol symbol, BotDifficultyLevel botDifficultyLevel/*, BotWinningStrategy botPlayingStrategy*/){
         super(name, symbol, PlayerType.BOT);
         this.botDifficultyLevel = botDifficultyLevel;
-        this.botPlayingStrategy = botPlayingStrategy;
+        //this.botPlayingStrategy = botPlayingStrategy;
+        this.botPlayingStrategy = BotPlayingStrategyFactory.getBotPlayingStrategy(botDifficultyLevel);
     }
 
     public BotDifficultyLevel getBotDifficultyLevel() {
@@ -33,5 +35,12 @@ public class Bot extends Player{
 
     public void setBotPlayingStrategy(BotWinningStrategy botPlayingStrategy) {
         this.botPlayingStrategy = botPlayingStrategy;
+    }
+
+    //makeMove happened in Players.java also...so override here
+    @Override
+    public Move makeMove(Board board){
+        Move move = botPlayingStrategy.makeMove(board);
+        return move;
     }
 }

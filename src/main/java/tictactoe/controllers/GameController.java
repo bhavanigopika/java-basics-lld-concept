@@ -1,6 +1,7 @@
 package tictactoe.controllers;
 
 import tictactoe.exceptions.InvalidBotCountException;
+import tictactoe.exceptions.InvalidMoveException;
 import tictactoe.exceptions.InvalidPlayerCountException;
 import tictactoe.models.Game;
 import tictactoe.models.GameState;
@@ -22,9 +23,10 @@ public class GameController {
     }
 
     //to make a move, passing the game here
-    public void makeMove(Game game){
+    public void makeMove(Game game) throws InvalidMoveException {
         game.makeMove();
     }
+
     public GameState getGameState(Game game){
         return game.getGameState();
     }
@@ -35,5 +37,10 @@ public class GameController {
 
     public Player getWinner(Game game){
         return game.getWinner();
+    }
+
+    //UNOD feature
+    public void undo(Game game){
+        game.undo();
     }
 }

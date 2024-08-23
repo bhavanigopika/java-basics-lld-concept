@@ -39,7 +39,7 @@ public class GameController {
         return game.getWinner();
     }
 
-    //UNOD feature
+    //UNDO feature
     public void undo(Game game){
         game.undo();
     }

@@ -3,7 +3,7 @@ package parkingLot.models;
 public enum PaymentMode {
     UPI,
     CASH,
-    CREDI_CARD,
+    CREDIT_CARD,
     DEBIT_CARD,
     NET_BANKING,
 }

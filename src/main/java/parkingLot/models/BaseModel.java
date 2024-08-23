@@ -5,7 +5,7 @@ import java.util.Date;
 public class BaseModel {
     //instead of primitive data type - long, we can use object Long so object is converted into series of bytes (i.e) serializable
     //so, use wrapper class(Long, Byte, Integer) instead of primitive data type(long, byte, int)
-    private long id;
+    private Long id;
     private Date createdAt;
     private Date lastModifiedAt;
 

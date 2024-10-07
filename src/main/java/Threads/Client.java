@@ -38,7 +38,7 @@ public class Client {
         //No, default constructor, so, I have to pass the number to print
         PrintNumber task2 = new PrintNumber(5);
         Thread t2 = new Thread(task2);
-        t2.start();
+        t2.start();//execute the thread
 
         System.out.println("Check the number what thread it is:");
 
@@ -48,10 +48,21 @@ public class Client {
 
         for(int i = 1; i <= 10; i++) {
             PrintNumber task = new PrintNumber(i);
-            Thread t = new Thread(task);
+            Thread t = new Thread(task);//Doing the multithreading
             t.start();
         }
 
+//        PrintHelloWorld task3 = new PrintHelloWorld();
+//        for(int i = 1; i <= 1000; i++) {
+//            Thread thread = new Thread(task3);
+//            thread.start();
+//        }
+
+
+        /*
+        t.start();//execute the task that you have created in new thread
+        t.run(); //directly calls within your thread
+         */
 
     }
 }

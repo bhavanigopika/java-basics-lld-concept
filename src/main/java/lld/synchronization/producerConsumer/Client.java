@@ -17,7 +17,7 @@ public class Client {
         Consumer c4 = new Consumer(store, 6, "c4");
         Consumer c5 = new Consumer(store, 6, "c5");
 
-        //For producer
+        //For producer - created 3 producer task and task gets started
         Thread t1 = new Thread(p1);
         t1.start();
         Thread t2 = new Thread(p2);
@@ -25,7 +25,7 @@ public class Client {
         Thread t3 = new Thread(p3);
         t3.start();
 
-        //For consumer
+        //For consumer - created 5 consumer task and task gets started
         Thread t4 = new Thread(c1);
         t4.start();
         Thread t5 = new Thread(c2);

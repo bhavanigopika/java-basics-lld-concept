@@ -15,9 +15,9 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        synchronized (store) {
-            while (true) {
-                if(!store.isEmpty()) {
+        while (true) {//keep on removing the shirt(object) until you can
+            synchronized (store) {
+                if(!store.isEmpty()) {//if(store.size() > 0)
                     System.out.println(this.name + " Removing an element: " + store.size());
                     store.remove();
                 }

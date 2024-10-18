@@ -1,4 +1,4 @@
-package lld.synchronization.producerConsumer;
+package semaphore.producerConsumer;
 
 import java.util.Queue;
 

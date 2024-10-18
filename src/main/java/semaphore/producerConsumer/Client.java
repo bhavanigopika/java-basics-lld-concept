@@ -1,4 +1,4 @@
-package lld.synchronization.producerConsumer;
+package semaphore.producerConsumer;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -36,5 +36,17 @@ public class Client {
         t7.start();
         Thread t8 = new Thread(c5);
         t8.start();
+
+        //Here, occuring sequentially....at one time, only one thread executing in critical section
+        //Is this fast enough? NO, because I am okay with multiple people staying in critical section, so run the code faster - We can do it by Semaphore
+        //Allowing multiple threads (producers and consumers)
+        /*
+        Also, we agreed
+
+        Number of producers who can enter the store at one time = Number of empty spaces, so that many producer can add  based on number of empty spaces
+        Number of consumers who can enter the store at one time = Number of filled spaces, so that many consumer can remove based on number of filled spaces
+        */
+
+
     }
 }

@@ -19,6 +19,8 @@ public class Client {
         p1.first = "ABC";
         p1.second = 87893;
 
+
+
         //The  following code also acceptable ...This is also Raw type (i.e) we can put any data type.
         HashMap hm = new HashMap();
         hm.put("hanu", "man"); //string, string
@@ -34,12 +36,12 @@ public class Client {
 
 
 
-        //Now, using generics - parameterized data type
+        //Now, using generics - parameterized data type(i.e) create the class and also define parameter
         Pair<Integer, String> p2 = new Pair<>();
         //or, we can use the below line but the following line looks redundant...so we use the above line generally...
         //Pair<Integer, String> p2 = new Pair<Integer, String>();
 
-        //Pair<Integer, String, Float, Integer, String> p2 = new Pair<Integer, String, Float, Integer, String>();
+        //Pair<Integer, String, Float, Integer, String> p30 = new Pair<Integer, String, Float, Integer, String>();
 
         //pass the value
         p2.first = 78;//It is accepting only integer since we gave as Pair<Integer, String>
@@ -74,13 +76,13 @@ public class Client {
 
 
         //call doSomethingNonStatic by creating the object...
-        //So, non-static methods use class level generics data type...To call these methods, we need a object
+        //So, non static methods use class level generics data type...To call these methods, we need a object
         //and because of which we will be able to know the respective data type you are referring...
-        //p11.doSomethingNonStatic("Bhavani"); //Error: since p11 is <Integer> not <Static>
+        //p11.doSomethingNonStatic("Bhavani"); //Error: since p11 is <Integer> not <String>
         p12.doSomethingNonStatic("Krish");//This accepts, because p12 having <String> also
 
         //let's return as string and if we want to return as Integer, then we can do it...<Arun> generic doesn't have own data type.
-        String res2 = p13.doSomethingForLearning("Anything");
+        String res2 = p13.doSomethingForLearning("Anything");//It represents V from <T,V>...see Pair.java
         Integer res3 = p13.doSomethingForLearning(80);
         Long res4 = p13.doSomethingForLearning(972L);
 
@@ -98,6 +100,8 @@ public class Client {
         Utils.simpleDoSomething(new Dog());//dog, cat...since it is a child of animal and animal can hold the value of its children types
         Utils.simpleDoSomething(new Cat());//dog, cat...since it is a child of animal and also accept object of cat.
 
+        ArrayList<Integer> al = new ArrayList<>();
+
         //can we pass list of dog, list of cat here
         List<Dog> dogs = new ArrayList<>();
         //add some dogs in this list
@@ -113,9 +117,13 @@ public class Client {
         cats.add(new Cat());
         cats.add(new Cat());
 
-        //can we pass list of dogs in doSomething method
-//        Utils.doSomething(dogs);
-//        Utils.doSomething(cats);
+        //can we pass list of dogs in doSomething method? YES, but you can't pass on doSomething4 because, in the doSomething4 method,
+        //the required type is List<Animal> not as List<dogs> or List<cats>
+        /*Utils.doSomething4(dogs);
+        Utils.doSomething4(cats);*/
+        Utils.doSomething(dogs);
+        Utils.doSomething(cats);
+
         /*
         we cannot store List<Dog> or List<Cat> in List<Animal> -> Not allowed
         But we can store only Dog or only cat in Animal, not list of dog List<Dog>, not list of cat List<Cat>

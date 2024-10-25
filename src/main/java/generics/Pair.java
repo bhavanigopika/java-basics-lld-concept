@@ -1,6 +1,6 @@
 package generics;
 
-public class Pair<T, V> {
+public class Pair<T, V>{
     T first;
     V second;
 
@@ -23,8 +23,8 @@ public class Pair<T, V> {
 
     }
 
-    //we can use class level generics in non static method also...Non-static methods also have own generics.
-    //Here,class level generics we can give <A>, <B>, <T> <V> <P> <Q> <Arun> <Hanumna> as our wish...and return type is Arun
+    //we can use class level generics in non-static method also...Non-static methods also have own generics.
+    //Here,class level generics we can give <A>, <B>, <T> <V> <P> <Q> <Arun> <Hanuman> as our wish...and return type is Arun
     public <Arun> Arun doSomethingForLearning(Arun p1){
         return p1;
     }

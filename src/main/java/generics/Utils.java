@@ -15,7 +15,6 @@ public class Utils {
         }
     }
 
-
     //Here, we didn't know what exactly T is
     //method doSomething will accept list of Animal, list of dogs, list of cats...
     //List <? extends Animal> -> wildcard notation
@@ -24,7 +23,9 @@ public class Utils {
 
         }
     }
-    //or the above method we can write as...see below(standard method of writing generic)...above methods is fast forward generic method
+    //or
+    //the above method we can write as...see below(standard method of writing generic)...above methods is fast forward generic method
+
     //Here, what exactly T is --> when we pass in main function
     //T extends Animal -> Anything of this type Animal + anything who is children of animal ->
     //we can pass list of animal type List<Animal> or list of any type which is children of animal List<T> animalList
@@ -34,7 +35,7 @@ public class Utils {
         }
     }
 
-    //let's return somethng
+    //let's return something
     public static <T extends Animal> T doSomething5(List<T> animalList){
         return animalList.get(0);
     }
@@ -50,8 +51,12 @@ public class Utils {
             System.out.println("Animal name is: " + it.name);
         }
     }
+
+    /*
+    Interfaces and Generics
+     */
     //to pass list of interfaces using generics
-    public static <T extends A> void testIntefaces(List<T> A){
+    public static <T extends A> void testInterfaces(List<T> A){
         for(T it:A){
 
         }

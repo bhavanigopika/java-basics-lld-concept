@@ -128,18 +128,18 @@ public class Client {
             q.poll();
         }
         System.out.println();
-        //I want to make it work like a max heap
 
-        Queue<String> q1 = new PriorityQueue<>(new Comparator<String>() {
+        //I want to make it work like a max
+        Queue<Integer> q1 = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
-            public int compare(String a, String b){//here we can define the custom order(we can create our own order in this method)
-              /*if(a > b){
+            public int compare(Integer a, Integer b){//here we can define the custom order(we can create our own order in this method)
+                if(a > b){
                     return -1; //a comes first(first element comes first)
                 }else if(b > a){
                     return 1;//b comes first(second element comes first in the final output
-                }else if(a == b){
+                }else{
                     return 0;//anything comes first
-                }*/
+                }
 
                 //or we can use it as -> a.compareTo(b);
 
@@ -150,24 +150,46 @@ public class Client {
                  */
 
                 //return a.compareTo(b);//natural order -> abi, john, krish, ram, vikki
-                return b.compareTo(a);//descending order -> vikki, ram, krish, john, abi
+                //return b.compareTo(a);//descending order -> vikki, ram, krish, john, abi
             }
         });
-        q1.add("Krish");
-        q1.add("Vikki");
-        q1.add("Abi");
-        q1.add("John");
-        q1.add("Ram");
+        q1.add(1);
+        q1.add(4);
+        q1.add(2);
+        q1.add(8);
+        q1.add(6);
         while(!q1.isEmpty()){
             System.out.print(q1.peek() + " ");
             q1.poll();
         }
         System.out.println();
 
+        Queue<String> q9 = new PriorityQueue<>(new Comparator<String>() {
+            public int compare(String a, String b){
+                //return a.compareTo(b);//natural order -> abi, john, krish, ram, vikki
+                return b.compareTo(a);//descending order -> vikki, ram, krish, john, abi
+            }
+        });
+
+        q9.add("Ram");
+        q9.add("Abi");
+        q9.add("Krish");
+        q9.add("John");
+        q9.add("Vikki");
+
+        System.out.println(q9);
+        while(q9.size() != 0){
+            System.out.print(q9.peek() + " ");
+            q9.poll();
+        }
+        System.out.println();
+
+
         /*
         Done with List, Set, Queue Interfaces
         */
         System.out.println("********************");
+
         /*
         Comparable and Comparator Interface - These two interfaces are in collection interface
          */
@@ -184,7 +206,7 @@ public class Client {
         Collections.sort(ls1, new Comparator<String>() {
             @Override
             public int compare(String a, String b) {
-                return b.compareTo(a); //b.compreTo(a) is impt, then only non-decreasing order
+                return b.compareTo(a); //b.compareTo(a) is impt, then only non-decreasing order
             }
         });
         System.out.println(ls1);//sam, raj, moon, krish, jack
@@ -208,7 +230,7 @@ public class Client {
 
         //Collections of student, so iterate
         for(Student s:ls5){
-            System.out.println(s);//gives object reference
+            System.out.println(s);//collections.Student@78a8ab78 -> gives object reference for each student
             //sorted as per the psp first, if same psp, then sorted via name that we give in Student class (Students implements Comparable) -> This was natural ordering...
             System.out.println(s.name + " " + s.psp + " " + s.univName);
 

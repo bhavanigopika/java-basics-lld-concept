@@ -13,7 +13,7 @@ public class Penguin implements Animal,Bird {
     }
     @Override
     public void fly() {
-        System.out.println("Penguin fly");
+        System.out.println("Penguin can't fly");
     }
 
     public void jump(){

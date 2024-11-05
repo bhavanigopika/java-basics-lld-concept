@@ -6,9 +6,9 @@ public class Student {
     String univName;
     int roomNo;
 
-    //accepting empty coffe / empty object Student st here
+    //accepting empty coffee / empty object Student st here
     void fillCoffee(Student st){
-        //st.univName = SRM University and this,univName = SRM Univeersity so, st4 value has shown here
+        //st.univName = SRM University and this.univName = SRM University so, st4 value has shown here
         System.out.println("Pass by reference");
         System.out.println("Coffee filled for student st.univName is " + st.univName + " and this.univName is " + this.univName);
         //updating the coffee mug with new student
@@ -52,15 +52,25 @@ public class Student {
         this.psp = oldObject.psp;
         this.roomNo = oldObject.roomNo;
     }
-    /*
-    Student(String heyMan){
+    /*Student(String heyMan){
         //here you should write valid code
         this.univName = heyMan;
-    }
-    //or
-    Student(String univName){
-        this.univName = univName;
-    }
+    }*/
 
-    */
+ /*   //Return the value
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollNo=" + rollNo +
+                ", psp=" + psp +
+                ", univName='" + univName + '\'' +
+                ", roomNo=" + roomNo +
+                '}';
+    }*/
+//or
+
+    /*Student(String univName){
+        this.univName = univName;
+    }*/
+
 }

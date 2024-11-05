@@ -9,6 +9,9 @@ public class DatabaseConnection {
     String dbUrl;
     String userName;
     String password;
+    /*
+
+    //Getter and Setter
 
     public static void setInstance(DatabaseConnection instance) {
         DatabaseConnection.instance = instance;
@@ -46,6 +49,8 @@ public class DatabaseConnection {
         this.password = password;
     }
 
+     */
+
     //using synchronized keyword
     public static DatabaseConnection getInstance() {
         //Double check locking
@@ -79,9 +84,9 @@ public class DatabaseConnection {
         return instance;
     }
 
-    //if the manual constructor created, is there default constructor will create? No
-    private DatabaseConnection(){
-
-    }
+//    //if the manual constructor created, is there default constructor will create? No
+//    private DatabaseConnection(){
+//
+//    }
 
 }

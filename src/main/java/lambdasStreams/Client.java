@@ -1,6 +1,7 @@
 package lambdasStreams;
 
 import com.fasterxml.jackson.core.JsonToken;
+import inheritance.C;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,6 +56,7 @@ public class Client {
         Collections.sort(ls, (Student student, Student o2) -> {
             return student.univName.compareTo(o2.univName);
         });
+        //Collections.sort(ls, Comparator.comparing((Student student) -> student.univName));
 
 
         /*
@@ -221,7 +223,7 @@ public class Client {
                                 .filter( (elem) ->  elem % 2 == 0)/*  .filter( (elem) -> {return elem % 2 == 0;}) */
                                 .collect(Collectors.toList());
 
-        System.out.println(res);
+        System.out.println(res);//[2, 10, 8]
 
         /*
         map
@@ -233,7 +235,7 @@ public class Client {
                                 .map((elem) ->  elem * elem )/*.map((elem) -> {return elem * elem;} )*/
                                 .sorted()
                                 .collect(Collectors.toList());
-        System.out.println(res2);//once terminal operated, streams gets closed
+        System.out.println(res2);//once terminal operated, streams gets closed and ouput is [4, 64, 100]
 
         /*
         If I want to sort in descending order, use lambda expression here
@@ -244,7 +246,7 @@ public class Client {
                                 .map((elem) -> elem * elem)
                                 .sorted((x,y) -> y - x) /* .sorted((x,y) -> {return y - x;}) */
                                 .collect(Collectors.toList());
-        System.out.println(res3);
+        System.out.println(res3); //[100, 64, 4]
 
         /*
         The above condition is similar to number of for loop we can use to get answer that is
@@ -296,7 +298,7 @@ public class Client {
         /*
         Method 2:
             using stream -> reduce method-> reduce  means group of all elements into one element
-            reduce take two params 1) initial value(i.e) (0) , 2) lambda expression(i.e) (a,b) -> a + b
+            reduce take two params 1) initial value(i.e) (0), and 2) lambda expression(i.e) (a,b) -> a + b
             here, not list<Integer> only use Integer because we have return one integer value.
         */
         Integer res5 = lst.stream().reduce(0, (a, b) -> a + b); /*lst.stream().reduce(0, (a, b) -> {return a + b;});*/
@@ -325,10 +327,10 @@ public class Client {
                             .sorted((x, y) -> y - x)
                             .reduce(Integer.MAX_VALUE, (a,b) -> Math.min(a,b));
         System.out.println(res7); //even ele among list(2,5,3,10,8,9,1) is 2,10,8 -> map: 4, 100, 64 -> sorted: 4,64,100 -> min: 4
-      /*
-      Does the order of applying the stream methods matter? YES. The order will definitely affect the performance because the output of current stream method will become input of the next method
-      .sorted depend on .map and .map depend on filter…
-       */
+        /*
+        Does the order of applying the stream methods matter? YES. The order will definitely affect the performance because the output of current stream method will become input of the next method
+        .sorted depend on .map and .map depend on filter…
+        */
 
         System.out.println("****Assignment problem*****");
 
@@ -339,6 +341,104 @@ public class Client {
                 .allMatch(w -> w.length() > 3);
 
         System.out.println("All match: " + allMatch);
+
+        System.out.println("*******************************************************************");
+
+        List<String> ls10 = Arrays.asList("guava",  "orange", " dates");
+        Comparator<String> comparator = Comparator.naturalOrder();
+        System.out.println(comparator); //INSTANCE
+
+        Comparator<String> comparator1 = (s1,s2)->Integer.compare(s2.length(), s1.length());
+        System.out.println(comparator1); //lambdasStreams.Client$$Lambda/0x0000015fac009260@27f8302d
+
+        Comparator<String> comparator2 = Comparator.comparingInt(String :: length).reversed();
+        System.out.println(comparator2); //java.util.Collections$ReverseComparator2@fe32c033
+
+        System.out.println("*******************");
+
+        List<String> fruits15 = Arrays.asList("Apple", "Banana", "Orange", "Grape", "Apricot", "Avocado");
+        List<String> ans10 = fruits15.stream()
+                                    .filter((a) -> a.startsWith("A"))
+                                    .collect(Collectors.toList());
+        System.out.println(ans10); //[Apple, Apricot, Avocado]
+
+        System.out.println("*************");
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 2, 3, 5, 6, 1, 7, 8, 9, 7);
+        List<Integer> distinctNumbers = numbers.stream()
+                                                .distinct()
+                                                .collect(Collectors.toList());
+        System.out.println("Distinct numbers: " + distinctNumbers); //Distinct numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        numbers = Arrays.asList(5,5,5,6,6,6,4,4,4);
+        distinctNumbers = numbers.stream()
+                                    .distinct()
+                                    .collect(Collectors.toList());
+        System.out.println("Distinct numbers: " + distinctNumbers);//Distinct numbers: [5, 6, 4]
+
+        System.out.println("***************************");
+
+        List<String> animals = Arrays.asList("zebra", "lion", "tiger", "elephant", "giraffe");
+        List<String> sortedAnimals = animals.stream()
+                                            .sorted((x,y) -> y.length() - x.length())
+                                            .collect(Collectors.toList());
+        //or
+        List<String> sortedAnimals1 = animals.stream()
+                                             .sorted((x, y) -> Integer.compare(y.length(), x.length()))
+                                             .collect(Collectors.toList());
+        //or using method reference
+        List<String> sortedAnimals2 = animals.stream()
+                                             .sorted(Comparator.comparing(String::length).reversed())
+                                             .collect(Collectors.toList());
+        List<String> sortedAnimals3 = animals.stream()
+                                             .sorted(Comparator.comparing(String::length))
+                                             .collect(Collectors.toList());
+
+
+        System.out.println(sortedAnimals); //[elephant, giraffe, zebra, tiger, lion]
+        System.out.println(sortedAnimals1);//[elephant, giraffe, zebra, tiger, lion]
+        System.out.println(sortedAnimals2);//[elephant, giraffe, zebra, tiger, lion]
+        System.out.println(sortedAnimals3);//[lion, zebra, tiger, giraffe, elephant]
+
+        System.out.println("*******************************");
+
+        animals = Arrays.asList("cat","dog","animal-x","elephant","mouse");
+        sortedAnimals = animals.stream().sorted((x, y) -> y.length() - x.length() ).collect(Collectors.toList());
+        System.out.println(sortedAnimals); //[animal-x, elephant, mouse, cat, dog]
+
+        animals = Arrays.asList();//This is empty array
+        sortedAnimals = animals.stream().sorted((x,y)-> y.compareTo(x) ).collect(Collectors.toList());
+        System.out.println(sortedAnimals);//[]
+
+        animals = Arrays.asList("a","b","d","c","aa");
+        sortedAnimals = animals.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println(sortedAnimals); //[d, c, b, aa, a]
+
+        System.out.println("*******************************");
+
+        List<String> sentences = Arrays.asList(
+                "Java is a programming language.",
+                "Python is also a good language.",
+                "Java stream processing is powerful.",
+                "C++ is not as popular as Java."
+        );
+
+        int averageLength = processSentences(sentences);
+        System.out.println(averageLength);
+        //processSentences(sentences);
+
+
+        sentences = Arrays.asList(
+                "Python is a programming language.",
+                "JS is used for web development.",
+                "Ruby is known for its simplicity.",
+                "java is good"
+        );
+
+        averageLength = processSentences(sentences);
+        System.out.println(averageLength);
+        //processSentences(sentences);
+
 
         System.out.println("*********");
 
@@ -353,5 +453,11 @@ public class Client {
         Function<Integer, Integer> increment = x -> x + 1;
         System.out.println(increment.apply(7)); // Output: ?
 
+    }
+
+    public static int processSentences(List<String> sentences) {
+        //code here
+        //sentences.stream().filter((s) -> s.contains("Java")).map(String :: length));
+        return -1;
     }
 }

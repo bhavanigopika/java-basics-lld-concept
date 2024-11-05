@@ -50,8 +50,6 @@ package org.example;
 
 public class FindMaxElement {
 
-    // TODO: Implement a generic method called 'findMax' that finds and returns the maximum element from an array.
-
     // The method should use bounded generics to ensure that the array elements extend the Comparable interface.
     // The method should return NULL in case of empty or null array
 

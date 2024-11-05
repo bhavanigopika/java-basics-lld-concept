@@ -5,7 +5,7 @@ public class Client {
     public static void main(String[] args) {
 
         Amazon amazon = Amazon.getInstance();
-        /*Amazon amazon = new Amazon();*/
+        //Amazon amazon = new Amazon();
 
         EmailSender emailSender = new EmailSender();
         InvoiceGenerator invoiceGenerator = new InvoiceGenerator();

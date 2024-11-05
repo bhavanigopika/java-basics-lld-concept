@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 
 //let's create sorter task that is using class sorter
 //I have to tell the callable that I have to return the list of Integer
-public class Sorter implements Callable<List<Integer>> {
+public class MergeSorter implements Callable<List<Integer>> {
 
     //sort the list of array which is Integer
     List<Integer> arrayToSort;
@@ -16,7 +16,7 @@ public class Sorter implements Callable<List<Integer>> {
 
     //Constructor says that whatever list of integer you want to sort, accept it into the constructor
     //so, whoever create the class Sorter/task, will give the array
-    Sorter(List<Integer> arrayToSort, ExecutorService ex) {
+    MergeSorter(List<Integer> arrayToSort, ExecutorService ex) {
         this.arrayToSort = arrayToSort;
         this.ex = ex;
     }
@@ -60,9 +60,20 @@ public class Sorter implements Callable<List<Integer>> {
         //and divided array will do recursion also. In DSA, we do recursive merge function for left[] and right[]...here,we are doing sorter task for leftHalf and rightHalf
         //that is make a call to the same call() method ---> calling the Sorter task and this will execute the call method here
         //The Sorter task code are inside the call() method.
-        Sorter task1 = new Sorter(leftHalf, ex);//pass left array
-        Sorter task2 = new Sorter(rightHalf, ex);//pass right array
+        /*
+        Take the left part and sort on different thread
+        Take the right part and sort on different thread
+        */
+        MergeSorter task1 = new MergeSorter(leftHalf, ex);//pass left array
+        MergeSorter task2 = new MergeSorter(rightHalf, ex);//pass right array
 
+        /*
+        //Doing in single thread
+        List<Integer> leftSortedArray = leftMergeSorter.call();
+        List<Integer> rightSortedArray = rightMergeSorter.call();
+        */
+
+        //Doing multithread
         //we have to submit both of the task(task1 and task2) in Executor Service...So, use executor service in Client.java...It will better
         // Because, we don't want to create multiple executor service for each class...So, commonly created ExecutorService in Client.java
 
@@ -77,7 +88,7 @@ public class Sorter implements Callable<List<Integer>> {
         //As of now, we sorted both left and right, now we have to merge both the leftSortedArray and rightSortedArray
         List<Integer> finalMergedArray = new ArrayList<>();
 
-        //use two pointer technique
+        //use two pointer technique(Merge the two sorted Arrays)
         int i = 0, j = 0;
         while(i < leftHalf.size() && j < rightHalf.size()){
             if(leftHalf.get(i) < rightHalf.get(j)){

@@ -46,7 +46,9 @@ public class Client {
         CALL DOSOMETHING HERE and go with try and catch
          */
 
-        /* try{
+        /*
+
+        try{
             st1.doSomething(20);
         }catch(SQLException ex1){
 
@@ -56,7 +58,9 @@ public class Client {
             System.out.println("I am doing some workaround");//piece of code is working around
             throw new SQLException(); //further throwing an exception here and this main method also throws an exception(see main method line) because we have throw here
                                         //we can throw the exception in catch block also...
-        }*/
+        }
+
+        */
 
 
     }

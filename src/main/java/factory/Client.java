@@ -13,7 +13,7 @@ public class Client {
         //UIFactory uifac= flutter.getUIFactory("hghgh");
 
         //now we changed into enum...so give as Platform.WINDOWS, Platform.ANDROID, Platform.iOS
-        UIFactory uifac = flutter.getUIFactory(Platform.ANDROID);
+        UIFactory uifac = flutter.getUIFactory(Platform.iOS);
 
         Button button = uifac.createButton(); //I will get iOS button
         button.clickButton();//output: Clicking iOS button

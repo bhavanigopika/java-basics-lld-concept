@@ -18,6 +18,5 @@ public class Client {
         System.out.println(dbc2);
         System.out.println(dbc3);
         System.out.println(dbc4);
-
     }
 }

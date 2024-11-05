@@ -11,6 +11,8 @@ public class Client {
         s1.rollNo = 1;
         s1.name = "Ram";
         s1.univName = "Amritha University";
+
+        s1.doSomething(5,"hello");
     }
 
 }

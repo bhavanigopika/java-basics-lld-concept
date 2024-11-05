@@ -2,7 +2,7 @@ package parkingLot.models;
 
 public class Ticket extends BaseModel {
     private String ticketNo;
-    private Gate generatedAt;
+    private Gate generatedAt;//in which gate, the ticket has generated
     private Operator generatedBy;
     private Vehicle vehicle;
     private ParkingSpot parkingSpot;

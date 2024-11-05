@@ -21,7 +21,7 @@ public class Client {
         //here, I am calling the method of void doSomething which has overridden by B
         //and new B() --> new object is created at run time only...during run time only knows whose doSomething() going to call.
         A a2 = new B();
-        a2.doSomething("Ram");//ouptut: Inside B...try out when you comment doSomething in A
+        a2.doSomething("Ram");//ouptut: Inside B...try out when you comment doSomething in A...Note: Output: Inside A will occur when we comment doSomething in B.java
         //typecast
         ((B)a2).doSomething("Ram");  //output: Inside B...try out when you comment doSomething in A
         System.out.println("******************");

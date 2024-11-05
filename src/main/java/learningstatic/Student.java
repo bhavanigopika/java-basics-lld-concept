@@ -26,12 +26,16 @@ public class Student {
     static String domainName;
     static double classRoomSize;
 
+//    Student(){
+//
+//    }
+
     //Let's try static method
     //This method, no need to call for all the students, call it only once, so domain name has changed
     //If I do not want to call every object, and I want this method into object independent...
     //So, I add static in front of void changeDomainName(String newDomainName)
     static void changeDomainName(String newDomainName) {
-        //this.domainName = newDomainName;
+        //this.domainName = newDomainName; -> don't use this -> 'learningStatic.Student.this' cannot be referenced from a static context
         domainName = newDomainName;
     }
 }

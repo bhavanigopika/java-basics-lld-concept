@@ -15,7 +15,7 @@ public class Flutter {
 
     //keep factory methods - This is core method
     //connect the UIfactory interface to apply factory method and this is abstract factory design pattern
-    //get the UIfactory(getUIFactory) -> actually returns the object corresponding to the platform type
+    //get the UIfactory(getUIFactory) -> actually returns the object corresponding to the platform(related) type
 
 /*    UIFactory getUIFactory(String platform){
         if(platform == "iOS") {
@@ -41,7 +41,7 @@ public class Flutter {
         }
     }*/
 
-    //To reach practical factory design patter, we delete the above if else condition and copy in new class...Here the new class name is UIFactoryFactory
+    //To reach practical factory design pattern, we delete the above if else condition and copy in new class...Here the new class name is UIFactoryFactory
     //The code of if else for creating corresponding object is moved to UIFactoryFactory class - Practical Factory Design Pattern
     UIFactory getUIFactory(Platform platform){
         return UIFactoryFactory.getUIFactoryForPlatform(platform);

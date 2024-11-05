@@ -40,5 +40,6 @@ public class Client {
 
         //to check whether do we have a student object or not
         System.out.println("Debug here");
+
     }
 }

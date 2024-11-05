@@ -9,7 +9,7 @@ public class IntelligentStudent extends Student{
 
     }
 
-    IntelligentStudent(IntelligentStudent  intelligentStudent){
+    IntelligentStudent(IntelligentStudent  intelligentStudent){ /* oldObjectIntelligentStudent */
         //initialize the parent attribute
         //call the constructor of parent - using super keyword -> here, to use parent attribute
         super(intelligentStudent); //super of intelligentStudent(children) is Student(parent)

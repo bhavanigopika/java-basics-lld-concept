@@ -25,32 +25,32 @@ public class Client{
         Student.univName = "Scaler University";
         Student.classRoomSize = 60.30;
 
-        System.out.println(Student.univName);
+        System.out.println(Student.univName);//Scaler University
 
         //The following this also possible, no matter it is because univName is always same and the object is not dependent
-        System.out.println(s1.domainName);
-        System.out.println(s2.domainName);
+        System.out.println(s1.domainName); //scaler.com
+        System.out.println(s2.domainName);//scaler.com
         s1.univName = "Amritha University";
         s1.domainName = "outlook.com";
-        System.out.println(s1.univName);
-        System.out.println(s1.domainName);
+        System.out.println(s1.univName);//Amritha University
+        System.out.println(s1.domainName);//outlook.com
         //static attributes is common to all object...so  domainName applicable to s1 and s2...
-        System.out.println(s2.domainName);
+        System.out.println(s2.domainName);//outlook.com
         //Better way to access static attributes through class not through object
-        System.out.println(Student.domainName);
+        System.out.println(Student.domainName);//outlook.com
 
         //I  have to use static method...If I remove static in Student class, then here definitely error
         Student.changeDomainName("gmail.com");
         //Now, check for two different student
-        System.out.println(s1.domainName);
-        System.out.println(s2.domainName);
-        System.out.println(Student.domainName);
+        System.out.println(s1.domainName);//gmail.com
+        System.out.println(s2.domainName);//gmail.com
+        System.out.println(Student.domainName);//gmail.com
 
         //If I want to use non-static here, then independently object mention...static usage or without static usage in Student class, here no problem
         s1.changeDomainName("bha.com");
-        System.out.println(s1.domainName);
-        System.out.println(s2.domainName);
-        System.out.println(Student.domainName);
+        System.out.println(s1.domainName);//bha.com
+        System.out.println(s2.domainName);//bha.com
+        System.out.println(Student.domainName);//bha.com
 
 
     }

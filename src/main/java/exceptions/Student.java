@@ -82,7 +82,7 @@ public class Student {
 
 /*
 Types of exception:
-    a) runtime exception - unchecked exception(does not try and catch), no comipiler error/check...run time error
+    a) runtime exception - unchecked exception(does not try and catch), no compiler error/check...run time error
             Example: Arithmetic Exception, IndexOutOfBounds etc.,
     b) checked exception(Need try and catch) -> definitely need to handle, compiler error will occur(either caller method handle it or throws the exception)
             Example: ClassNotFoundException, SQLException

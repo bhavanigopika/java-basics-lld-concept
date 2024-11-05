@@ -22,7 +22,17 @@ public class Student implements Prototype<Student> {
     // constructor is the one which initialize the attributes of any class
     //copy constructor - who accepts an older object and copies the attributes from the older object to a newer one
     //here, "this" is the newer object
-    Student(Student student){
+    Student(Student oldObjectStudent){
+        this.name = oldObjectStudent.getName();
+        this.age = oldObjectStudent.getAge();
+        this.psp = oldObjectStudent.getPsp();
+        this.batch = oldObjectStudent.getBatch();
+        this.avgBatchPsp = oldObjectStudent.getAvgBatchPsp();
+        this.instructorName = oldObjectStudent.getInstructorName();
+        this.moduleName = oldObjectStudent.getModuleName();
+    }
+    //or
+    /*  Student(Student student){
         this.name = student.name;
         this.age = student.age;
         this.psp = student.psp;
@@ -30,7 +40,7 @@ public class Student implements Prototype<Student> {
         this.avgBatchPsp = student.avgBatchPsp;
         this.instructorName = student.instructorName;
         this.moduleName = student.moduleName;
-    }
+    }*/
 
     @Override
     public Student clone() {
@@ -54,7 +64,7 @@ public class Student implements Prototype<Student> {
 
 //      Student st = new Student(this);
 //      return st;
-        return new Student(this); //this means student
+        return new Student(this); //this means oldObjectStudent (i.e) student
     }
 
     /*

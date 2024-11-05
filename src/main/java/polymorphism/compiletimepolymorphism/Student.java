@@ -20,7 +20,7 @@ public class Student {
 
     }
     void doSomething(int x, String s){
-
+        System.out.println("Enter the value here:" + x + " " + s);
     }
     String doSomething(int x, String s, String s1){
 

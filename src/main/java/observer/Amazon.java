@@ -22,6 +22,7 @@ public class Amazon {
     void registerSubscriber(OrderPlacedSubscriber ops){
         opsList.add(ops);
     }
+
     void unregisterSubscriber(OrderPlacedSubscriber ops){
         opsList.remove(ops);
     }

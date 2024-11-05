@@ -28,6 +28,7 @@ public class Client {
 		//Now, I am pointing the s2 object reference to the s1 object reference.
 		//So, I get same object reference and value for s2 which is same as s1
 		s2 = s1;
+
 		/*
 
 		s1.age = 10;

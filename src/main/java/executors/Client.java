@@ -16,16 +16,17 @@ public class Client {
         ExecutorService ex2 = Executors.newCachedThreadPool();
 
         //Let's print 1 to 100 and executor will create a thread
+        //Client will create a task and executor will create a thread
         for(int i = 1; i <=100; i++){
             //ex.execute(new Worker(i));
 
-            PrintNumber t = new PrintNumber(i);
+            PrintNumber task = new PrintNumber(i);
             //We are applying executor... executor will create a thread for use... we submit the task to executor
-            ex.submit(t);
+            ex.submit(task);
             //same thing work as like previous line ex.submit(t) --> print 1 to 100 in pool1 based on what thread method we have given and next line ex.submit(t) --> print 1 to 100 in pool1 based on what thread we have given
-            ex.submit(t);
+            ex.submit(task);
             //ex1.submit(t);
-            ex2.submit(t);
+            ex2.submit(task);
         }
     }
 }

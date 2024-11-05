@@ -1,4 +1,4 @@
-package scalerLambdas.MathematicalOperation;
+package scalerLambdas.Maths;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +7,10 @@ public class Main {
             return o1 + o2;
         };
 
-        
+        MathematicalOperation subtraction = (o1, o2) -> {
+            return o1 - o2;
+        };
+
+
     }
 }

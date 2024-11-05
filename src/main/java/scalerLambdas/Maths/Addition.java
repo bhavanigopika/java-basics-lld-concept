@@ -1,4 +1,4 @@
-package scalerLambdas.MathematicalOperation;
+package scalerLambdas.Maths;
 
 public class Addition implements MathematicalOperation{
     @Override

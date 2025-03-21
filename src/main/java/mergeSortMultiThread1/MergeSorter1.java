@@ -51,7 +51,7 @@ public class MergeSorter1 implements Callable<List<Integer>>{
 
         //If doing on multithread
         /*expect to sort and return into future later
-        In 44th line, we assigned 10 threads...Thread1 takes leftMergeSorter and Thread2 takes rightMergeSorter
+        In 46th line, we assigned 10 threads...Thread1 takes leftMergeSorter and Thread2 takes rightMergeSorter
         We don't create executor Service every time. We don't create thread pool everytime.
         So, use same executor service in client itself. Pass the executor service in constructor */
 

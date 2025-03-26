@@ -69,7 +69,7 @@ public class Builder {
     }
 
 //    public Student build(){
-          //build() -> buildStudent()
+//          //build() -> buildStudent()
 //        return new Student(this);//return new student and pass this(builder) object -> this represent current object(i.e) builder object
 //    }
 }

@@ -5,6 +5,6 @@ public class YesBank {
     //not necessarily every bank keep this method as same as other bank
     //In ICICI, they might use makepayment instead of transferMoney
     public void transferMoney(int amount, String from, String to){
-        System.out.println("Tranferring money via YES Bank");
+        System.out.println("Transferring money via YES Bank");
     }
 }

@@ -14,8 +14,7 @@ public class Flutter {
     }
 
     //factory methods - It is used to get the object of corresponding UIFactory type
-/*
-    public UIFactory getUIFactory(String platform){
+/*   public UIFactory getUIFactory(String platform){
         //According to the platform, then this type of factory should return
         if(platform.equals("IOS")){
             return new iosUIFactory();

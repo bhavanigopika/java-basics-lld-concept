@@ -1,6 +1,9 @@
 package decorator;
 
 public class ChocoChips implements IceCreamConeConstituents {
+
+    //I want existing cost and description of an ice cream. so, I use DI here. DI should come from outside
+    //I need iceCreamConeConstituents object
     private IceCreamConeConstituents iceCreamConeConstituents;
 
     public  ChocoChips(IceCreamConeConstituents iceCreamConeConstituents) {

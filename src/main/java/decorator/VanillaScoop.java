@@ -1,6 +1,8 @@
 package decorator;
 
 public class VanillaScoop implements IceCreamConeConstituents{
+
+    //I want existing cost and description of an ice cream. so, I use DI here. DI should come from outside
     private IceCreamConeConstituents iceCreamConeConstituents;
 
     public VanillaScoop(IceCreamConeConstituents iceCreamConeConstituents) {

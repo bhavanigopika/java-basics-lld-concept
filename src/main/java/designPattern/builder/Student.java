@@ -53,7 +53,7 @@ public class Student {
         */
         public Builder setName(String name) {
             this.name = name;
-            return this;//(return the builer object, so I used this(current object) which is in under the builder class)
+            return this;//(return the builder object, so I used this(current object) which is in under the builder class)
         }
 
         public int getAge() {

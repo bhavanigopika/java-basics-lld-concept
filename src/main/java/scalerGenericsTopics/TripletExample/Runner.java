@@ -11,30 +11,30 @@ public class Runner {
         Triplet<Long> idAgeRollNoLong = new Triplet<>(3L, 10L, 29L);
 
         //System.out.println(idNameEmail + " " +  idAgeRollNo + " " + idAgeRollNoLong);//get object address for 3 things
-        print(idNameEmail);//I am using only string here in print function
+        print(idNameEmail);//I am using only string here in print function //output: 1 Krish krish@scaler.com
 
-        //The following things are not accept because of compile time type-safety
+        //The following things are not accept because of compile time type-safety. So, advantage of generics is compile time type safety
         /*
         print(idAgeRollNoLong);//Required Type: Triplet<String> But provided Triplet<Long>
         print(idAgeRollNo);//Required Type: Triplet<String> But provided Triplet<Integer>
         */
 
-        printInGenericType(idNameEmail);
-        printInGenericType(idAgeRollNo);
-        printInGenericType(idAgeRollNoLong);
+        printInGenericType(idNameEmail);//output: 1 Krish krish@scaler.com
+        printInGenericType(idAgeRollNo);//output: 1 15 21
+        printInGenericType(idAgeRollNoLong);//output: 3 10 29
 
         //Let's do the triplet of string type in list (idNameEmail, idNameEmail). Note: idNameEmail which I mentioned in 2 times have same address...Having shallow copy not deep copy
         List<Triplet<String>> list = List.of(idNameEmail, idNameEmail);
-        printList(list);
+        printList(list); //output: 1 Krish krish@scaler.com 1,  Krish krish@scaler.com
 
         List<Triplet<Long>> list1 = List.of(idAgeRollNoLong, idAgeRollNoLong);//I can use long here and pass it in genericType
-        printListGenericType(list1);
+        printListGenericType(list1); //output: 3 10 29, 3 10 29
 
-        System.out.println("Average value: " + getAverage(idAgeRollNo));
+        System.out.println("Average value: " + getAverage(idAgeRollNo)); //Average value: 12.333333333333334
 
-        System.out.println("Average value using generic: " + getAverageGeneric(idAgeRollNo));
+        System.out.println("Average value using generic: " + getAverageGeneric(idAgeRollNo)); // Average value using generic: 12.333333333333334
 
-        System.out.println("Average value using generic: " + getAverageGeneric(idAgeRollNoLong));
+        System.out.println("Average value using generic: " + getAverageGeneric(idAgeRollNoLong)); // Average value using generic: 14.0
 
 
     }

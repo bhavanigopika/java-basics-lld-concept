@@ -12,5 +12,10 @@ public class Client {
         p.run();
         p.fly();
         p.jump();
+
+        Animal a = new Dog();
+        a.produceSound();
+        a.run();
+
     }
 }

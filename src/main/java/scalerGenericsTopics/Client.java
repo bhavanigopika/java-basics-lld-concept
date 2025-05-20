@@ -54,9 +54,5 @@ public class Client {
 
         Long lg = Demo.<Long, Boolean> getValue3(3L, false);
         System.out.println(lg);
-
-
-
-
     }
 }

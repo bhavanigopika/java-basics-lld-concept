@@ -42,8 +42,8 @@ public class Client {
         st4Copy.rollNo = 3;
         st4Copy.univName = "Anna University";
 
-        System.out.println(st4.univName);
-        System.out.println(st4Copy.univName);
+        System.out.println(st4.univName);//SRM University
+        System.out.println(st4Copy.univName);//Anna University
 
         Student s5 = new Student();
         s5.rollNo=20;

@@ -15,6 +15,7 @@ public class EasyBotWinningStrategy implements BotWinningStrategy {
         Every row is list of cell List<Cell>
         Iterate through the board and make the move at the first empty cell
         */
+        //It works as whichever next cell is empty, then it will place the next move
         for(List<Cell> row : board.getBoard()){
             //Every row you are going to each cell
             for(Cell cell : row){

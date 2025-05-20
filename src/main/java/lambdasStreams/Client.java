@@ -38,6 +38,7 @@ public class Client {
         //As per what parameter, the list is going to be sort -> it will sort based on what we tell in student class
         //to compare(we use comparable) that will be natural ordering(ascending order)
         Collections.sort(ls);
+
         //If I want to sort based on student psp or combination of student psp and univName, then I will create the
         // new class and create the comparator(we use comparator)
         Collections.sort(ls, new StudentPSPComparator());
@@ -159,6 +160,8 @@ public class Client {
         Stream<Integer> stm2 = lst.stream();
         Stream<Integer> stm3 = lst.stream();
 
+
+
         /*
         stm is nothing but like a pipeline attached to the list.
         It is actually a stream reference
@@ -220,7 +223,7 @@ public class Client {
         now, I am going to return this in List<Integer>
         */
         List<Integer> res = lst.stream()
-                                .filter( (elem) ->  elem % 2 == 0)/*  .filter( (elem) -> {return elem % 2 == 0;}) */
+                                .filter((elem) ->  elem % 2 == 0)/*  .filter( (elem) -> {return elem % 2 == 0;}) */
                                 .collect(Collectors.toList());
 
         System.out.println(res);//[2, 10, 8]

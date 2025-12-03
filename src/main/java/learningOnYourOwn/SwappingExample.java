@@ -9,5 +9,14 @@ public class SwappingExample {
         a = b;
         b = temp;
         System.out.println("After swapping a = " + a + " and b = " + b);
+
+        System.out.println("Now a = " + a + " and b = " + b);
+        //Swap two numbers without temporary variables
+        System.out.println("Again we have to do swap. So,");
+        System.out.println("Before swapping a = " + a + " and b = " + b);
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("After swapping a = " + a + " and b = " + b);
     }
 }

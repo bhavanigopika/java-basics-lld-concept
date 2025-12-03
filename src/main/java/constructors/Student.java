@@ -57,7 +57,7 @@ public class Student {
         this.univName = heyMan;
     }*/
 
- /*   //Return the value
+    //Return the value
     @Override
     public String toString() {
         return "Student{" +
@@ -66,7 +66,7 @@ public class Student {
                 ", univName='" + univName + '\'' +
                 ", roomNo=" + roomNo +
                 '}';
-    }*/
+    }
 //or
 
     /*Student(String univName){

@@ -25,7 +25,7 @@ public class TwoSumPairWithGivenSum {
 
     public static void main(String[] args) {
         int[] arr = { 0, -1, 2, -3, 1 };
-        int target = -2;
+        int target = -1;
 
         if (twoSum(arr, target))
             System.out.println("true");

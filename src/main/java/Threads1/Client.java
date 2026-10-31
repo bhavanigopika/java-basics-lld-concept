@@ -9,7 +9,6 @@ public class Client {
             t.start();//see, we get order is different, because all threads are actively waiting. So, CPU can schedule it...
         }
 
-
         for(int i = 1; i <= 1000; i++) {
             PrintNumber task2 = new PrintNumber(i);
             Thread t = new Thread(task2);

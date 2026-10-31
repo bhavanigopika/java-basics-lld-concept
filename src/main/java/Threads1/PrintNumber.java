@@ -8,6 +8,6 @@ public class PrintNumber implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(noToPrint + "current thread executing in " + Thread.currentThread().getName());
+        System.out.println(noToPrint + " current thread executing in " + Thread.currentThread().getName());
     }
 }
